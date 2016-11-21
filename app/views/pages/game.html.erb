@@ -1,0 +1,25 @@
+<div class="container">
+<h1> Words generator </h1>
+
+
+<form class="form" method="get">
+   <input type="text" id="grid" name="number" placeholder="How many letters do you want to play with ? ">
+   <input type="submit">
+ </form>
+
+<p class='show-grid'> Your letters are  :
+ <%= @grid %>
+</p>
+
+ <p class="texto">
+   <%= "What's your best shot now ?" %>
+ </p>
+
+ <form class="form" action="/score" method="get">
+   <input type="text" id="best_shot" name="shot" placeholder="Enter your trial.">
+   <input type="submit">
+   <input type="hidden" value="<%= Time.now %>" name="start_time" >
+   <input type="hidden" value="<%= @grid %>" name="grid" >
+ </form>
+
+</div>
